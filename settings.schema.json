@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "xt0rted/secrets-sync config",
+  "additionalProperties": true,
+  "required": [
+    "secrets"
+  ],
+  "definitions": {
+    "defaults": {
+      "type": "object",
+      "title": "defaults",
+      "description": "Default settings to use when setting a secret. These may be overridden on a per secret basis.",
+      "additionalProperties": false,
+      "properties": {
+        "actions": {
+          "type": "boolean",
+          "description": "If the Actions secret should be set.",
+          "default": false
+        },
+        "dependabot": {
+          "type": "boolean",
+          "description": "If the Dependabot secret should be set.",
+          "default": false
+        }
+      }
+    },
+    "secrets": {
+      "type": "array",
+      "description": "List of secrets to set.",
+      "additionalItems": false,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "repos"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the secret."
+          },
+          "value": {
+            "type": "string",
+            "description": "The value of the secret. Can be prefixed with `env/` to use the value of an environment variable. If not set the secret will be removed from each repo."
+          },
+          "actions": {
+            "type": "boolean",
+            "description": "If the Actions secret should be set. Takes priority over the default setting."
+          },
+          "dependabot": {
+            "type": "boolean",
+            "description": "If the Dependabot secret should be set. Takes priority over the default setting."
+          },
+          "repos": {
+            "type": "array",
+            "description": "List of repos to set the secret on. Should be in the format `org/repo`.",
+            "additionalItems": false,
+            "items": {
+              "type": "string",
+              "description": "Name of the repo (org/repo)"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "properties": {
+    "defaults": {
+      "type": "object",
+      "$ref": "#/definitions/defaults"
+    },
+    "secrets": {
+      "type": "array",
+      "$ref": "#/definitions/secrets"
+    }
+  }
+}

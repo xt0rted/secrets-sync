@@ -1,0 +1,23 @@
+name: "Secrets Sync"
+
+description: "Sync secrets across multiple repositories"
+
+author: "xt0rted"
+
+branding:
+  icon: "refresh-cw"
+  color: "purple"
+
+inputs:
+  config:
+    description: "The path of the config file to use"
+    required: false
+    default: "secrets-sync.yml"
+
+  repo_token:
+    description: "A repo scoped Personal Access Token or GitHub App Token"
+    required: true
+
+runs:
+  using: "node16"
+  main: "dist/index.js"

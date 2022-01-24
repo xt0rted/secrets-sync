@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=../settings.schema.json
+defaults:
+  actions: true
+  dependabot: true
+
+secrets:
+  - name: ENV_VAR1
+    value: abc123
+    repos:
+      - test/repo
+
+  - name: ENV_VAR2
+    value: env/ENV_VAR2
+    repos:
+      - test/repo
+
+  - name: ENV_VAR3
+    repos:
+      - test/repo
+
+  - name: ENV_VAR4
+    value: 123abc
+    actions: false
+    dependabot: false
+    repos:
+      - test/repo
