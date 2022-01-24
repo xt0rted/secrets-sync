@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`config loadConfig should return a config 1`] = `
+Object {
+  "defaults": Object {
+    "actions": true,
+    "dependabot": true,
+  },
+  "secrets": Array [
+    Object {
+      "name": "ENV_VAR1",
+      "repos": Array [
+        "test/repo",
+      ],
+      "value": "abc123",
+    },
+    Object {
+      "name": "ENV_VAR2",
+      "repos": Array [
+        "test/repo",
+      ],
+      "value": "env/ENV_VAR2",
+    },
+    Object {
+      "name": "ENV_VAR3",
+      "repos": Array [
+        "test/repo",
+      ],
+    },
+    Object {
+      "actions": false,
+      "dependabot": false,
+      "name": "ENV_VAR4",
+      "repos": Array [
+        "test/repo",
+      ],
+      "value": "123abc",
+    },
+  ],
+}
+`;

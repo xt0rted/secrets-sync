@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node: [16, 17]
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2.4.0
+
+      - name: Install Node
+        uses: actions/setup-node@v2.5.1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - run: npm ci
+
+      - run: npm run lint
+
+      - run: npm run build
+
+      - run: npm test
+
+      - run: npm run package
+        if: ${{ matrix.node != 17 }}
+
+      - run: npm run package:17
+        if: ${{ matrix.node == 17 }}
