@@ -11,6 +11,8 @@ Curently only [GitHub Actions](https://docs.github.com/en/actions/security-guide
 [Environment secrets](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#environment-secrets) have an API but aren't supported at the moment.
 If there's demand for this then support can be added.
 
+Get started quickly by forking [xt0rted/secrets-sync-template](https://github.com/xt0rted/secrets-sync-template).
+
 ## Usage
 
 Anything can be used to trigger a workflow, but manually triggering is probably the best option.
