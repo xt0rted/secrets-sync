@@ -10,13 +10,21 @@ branding:
 
 inputs:
   config:
-    description: "The path of the config file to use"
+    description: "Path of the config file to use"
     required: false
     default: "secrets-sync.yml"
 
   repo_token:
-    description: "A repo scoped Personal Access Token or GitHub App Token"
+    description: "Repo scoped Personal Access Token or GitHub App Token"
     required: true
+
+  filter_repos:
+    description: "Comma separated list of repos that should be processed. Any not in the list will be skipped."
+    required: false
+
+  filter_secrets:
+    description: "Comma separated list of secrets that should be processed. Any not in the list will be skipped."
+    required: false
 
 runs:
   using: "node16"
