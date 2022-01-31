@@ -24,7 +24,16 @@ By default the config file is named `secrets-sync.yml` and will be loaded from t
 ### Example workflow
 
 ```yaml
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      filter_repos:
+        description: "Comma separated list of repos that should be processed"
+        required: false
+
+      filter_secrets:
+        description: "Comma separated list of secrets that should be processed"
+        required: false
 
 jobs:
   sync:
@@ -38,6 +47,8 @@ jobs:
         uses: xt0rted/secrets-sync@v1
         with:
           repo_token: ${{ secrets.SECRET_SYNC_TOKEN }}
+          filter_repos: ${{ github.event.inputs.filter_repos }}
+          filter_secrets: ${{ github.event.inputs.filter_secrets }}
         env:
           APP_ID: ${{ secrets.APP_ID }}
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
@@ -67,10 +78,12 @@ secrets:
 
 ## Options
 
-Name | Description
--- | --
-`repo_token` | A `repo` scoped Personal Access Token or GitHub App Token.
-`config` | The path of the config file to use.
+Name | Required | Description
+-- | :--: | --
+`repo_token` | ✅ | `repo` scoped Personal Access Token or GitHub App Token.
+`config` | ✅ | Path of the config file to use.
+`filter_repos` | ❌ | Comma separated list of repos that should be processed. Any not in the list will be skipped.
+`filter_secrets` | ❌ | Comma separated list of secrets that should be processed. Any not in the list will be skipped.
 
 ## Config format
 
