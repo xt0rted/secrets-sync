@@ -56,7 +56,7 @@ describe("github", () => {
       await deleteSecret(deleteOptions);
 
       expect(scoped.isDone()).toBe(true);
-      expect(warningMock).toHaveBeenCalledWith("Secret APP_ID does not exist in xt0rted/test");
+      expect(warningMock).toHaveBeenCalledWith("Secret APP_ID for actions does not exist in xt0rted/test");
     });
 
     it("throws an error when there's an unhandled status", async () => {

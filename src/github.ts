@@ -47,7 +47,7 @@ export interface DeleteSecretOptions {
 }
 
 export async function deleteSecret({ environment, owner, repo, secret }: DeleteSecretOptions) {
-  info(`Deleting ${secret} in ${owner}/${repo}`);
+  info(`Deleting ${secret} for ${environment} in ${owner}/${repo}`);
 
   try {
     await github.request("DELETE /repos/{owner}/{repo}/{environment}/secrets/{secret_name}", {
@@ -60,7 +60,7 @@ export async function deleteSecret({ environment, owner, repo, secret }: DeleteS
     const { status, message } = error_ as RequestError;
 
     if (status === 404) {
-      warning(`Secret ${secret} does not exist in ${owner}/${repo}`);
+      warning(`Secret ${secret} for ${environment} does not exist in ${owner}/${repo}`);
 
       return;
     }
@@ -79,7 +79,7 @@ export interface SetSecretOptions {
 }
 
 export async function setSecret({ environment, owner, repo, secret, value, keyId }: SetSecretOptions): Promise<void> {
-  info(`Setting ${secret} in ${owner}/${repo}`);
+  info(`Setting ${secret} for ${environment} in ${owner}/${repo}`);
 
   try {
     await github.request("PUT /repos/{owner}/{repo}/{environment}/secrets/{secret_name}", {
