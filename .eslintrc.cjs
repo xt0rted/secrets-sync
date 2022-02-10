@@ -30,6 +30,7 @@ module.exports = {
     eqeqeq: ["error", "smart"],
     "implicit-arrow-linebreak": ["error", "beside"],
     indent: ["error", 2],
+    "no-console": "error",
     "no-duplicate-imports": ["error", { includeExports: true }],
     "no-multiple-empty-lines": ["error", { max: 1 }],
     "no-useless-constructor": "error",
