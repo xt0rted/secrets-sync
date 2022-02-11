@@ -66,7 +66,7 @@ describe("github", () => {
 
       const { deleteSecret } = await import("../src/github");
 
-      await expect(deleteSecret(deleteOptions)).rejects.toThrowError("Error deleting actions secret APP_ID in xt0rted/test; 403 Forbidden");
+      await expect(deleteSecret(deleteOptions)).rejects.toThrow("Error deleting actions secret APP_ID in xt0rted/test; 403 Forbidden");
 
       expect(scoped.isDone()).toBe(true);
     });

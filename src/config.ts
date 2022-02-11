@@ -26,7 +26,7 @@ export async function loadConfig(fileName: string): Promise<Settings> {
 }
 
 export function readConfigValue(value: string | undefined): string | undefined {
-  if (value?.startsWith("env/")){
+  if (value?.startsWith("env/")) {
     return process.env[value.slice(4)];
   }
 
