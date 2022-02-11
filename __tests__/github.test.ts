@@ -1,17 +1,13 @@
-import * as core from "@actions/core";
 import { jest } from "@jest/globals";
 
 import nock from "nock";
 
 import type { DeleteSecretOptions } from "../src/github";
 
-const warningMock = jest.fn();
-
 jest.unstable_mockModule("@actions/core", () => ({
-  debug: jest.fn(),
-  getInput: jest.fn().mockImplementation((name, options) => (jest.requireActual("@actions/core") as typeof core).getInput(name as string, options as core.InputOptions)),
-  info: jest.fn(),
-  warning: warningMock,
+  __esModule: true,
+  ...(jest.requireActual("@actions/core") as object),
+  warning: jest.fn(),
 }));
 
 describe("github", () => {
@@ -36,12 +32,13 @@ describe("github", () => {
         .delete("/repos/xt0rted/test/actions/secrets/APP_ID")
         .reply(204);
 
+      const { warning } = await import("@actions/core");
       const { deleteSecret } = await import("../src/github");
 
       await deleteSecret(deleteOptions);
 
       expect(scoped.isDone()).toBe(true);
-      expect(warningMock).not.toHaveBeenCalled();
+      expect(warning).not.toHaveBeenCalled();
     });
 
     it("silently skips a secret that doesn't exist", async () => {
@@ -49,12 +46,13 @@ describe("github", () => {
         .delete("/repos/xt0rted/test/actions/secrets/APP_ID")
         .reply(404);
 
+      const { warning } = await import("@actions/core");
       const { deleteSecret } = await import("../src/github");
 
       await deleteSecret(deleteOptions);
 
       expect(scoped.isDone()).toBe(true);
-      expect(warningMock).toHaveBeenCalledWith("Secret APP_ID for actions does not exist in xt0rted/test");
+      expect(warning).toHaveBeenCalledWith("Secret APP_ID for actions does not exist in xt0rted/test");
     });
 
     it("throws an error when there's an unhandled status", async () => {
