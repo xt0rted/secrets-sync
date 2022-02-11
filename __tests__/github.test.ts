@@ -21,8 +21,6 @@ describe("github", () => {
 
   afterEach(() => {
     delete process.env["INPUT_REPO_TOKEN"];
-
-    jest.resetAllMocks();
   });
 
   describe("deleteSecret", () => {
