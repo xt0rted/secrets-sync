@@ -87,5 +87,24 @@ module.exports = {
         "@typescript-eslint",
       ],
     },
+    {
+      files: [
+        "*.test.ts",
+      ],
+      plugins: [
+        "jest",
+      ],
+      extends: [
+        "plugin:jest/all",
+      ],
+      rules: {
+        "jest/no-hooks": "off",
+        "jest/no-standalone-expect": [
+          "error",
+          { additionalTestBlockFunctions: ["afterEach"] },
+        ],
+        "jest/prefer-expect-assertions": "off",
+      },
+    },
   ],
 };
