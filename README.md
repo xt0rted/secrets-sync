@@ -1,6 +1,7 @@
 # secrets-sync
 
-[![CI](https://github.com/xt0rted/secrets-sync/actions/workflows/ci.yml/badge.svg)](https://github.com/xt0rted/secrets-sync/actions/workflows/ci.yml)
+[![CI](https://github.com/xt0rted/secrets-sync/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/xt0rted/secrets-sync/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/xt0rted/secrets-sync/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/xt0rted/secrets-sync/actions/workflows/codeql-analysis.yml)
 
 A GitHub Action to sync secrets across multiple repositories.
 
