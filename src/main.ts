@@ -46,7 +46,7 @@ async function run(): Promise<void> {
     const { defaults, secrets } = await loadConfig(configFile);
 
     for await (const { name, value: value, repos, actions, dependabot } of secrets) {
-      if (secretFilters && secretFilters.some(ignoreCaseCompare(name))) {
+      if (secretFilters && !secretFilters.some(ignoreCaseCompare(name))) {
         debug(`Skipping secret ${name}`);
 
         continue;
