@@ -1,8 +1,9 @@
 /** @type {import("ts-jest/dist/types").InitialOptionsTsJest} */
 module.exports = {
-  globals: {"ts-jest": { useESM: true } },
-  moduleNameMapper: {"^(\\.{1,2}/.*)\\.js$": "$1"},
+  globals: { "ts-jest": { useESM: true } },
+  moduleNameMapper: { "^(\\.{1,2}/.*)\\.js$": "$1" },
   preset: "ts-jest/presets/default-esm",
+  resetMocks: true,
   testEnvironment: "node",
   testMatch: ["**/*.test.ts"],
   testRunner: "jest-circus/runner",

@@ -7,10 +7,10 @@ import {
 
 describe("config", () => {
   describe("loadConfig", () => {
-    test("should return a config", async () => {
+    it("should return a config", async () => {
       const configFile = fileURLToPath(new URL("test-config.yml", import.meta.url));
 
-      expect(await loadConfig(configFile)).toMatchSnapshot();
+      await expect(loadConfig(configFile)).resolves.toMatchSnapshot();
     });
   });
 
@@ -19,24 +19,24 @@ describe("config", () => {
       delete process.env["INPUT_VALUE"];
     });
 
-    test("should return undefined if undefined is provided", () => {
+    it("should return undefined if undefined is provided", () => {
       // eslint-disable-next-line unicorn/no-useless-undefined
-      expect(readConfigValue(undefined)).toBe(undefined);
+      expect(readConfigValue(undefined)).toBeUndefined();
     });
 
-    test("should return null if null is provided", () => {
+    it("should return null if null is provided", () => {
       // eslint-disable-next-line unicorn/no-null
-      expect(readConfigValue(null!)).toBe(null);
+      expect(readConfigValue(null!)).toBeNull();
     });
 
-    test("should return the value if it's not an env variable", () => {
-      expect(readConfigValue("TEST_VALUE")).toEqual("TEST_VALUE");
+    it("should return the value if it's not an env variable", () => {
+      expect(readConfigValue("TEST_VALUE")).toBe("TEST_VALUE");
     });
 
-    test("should return the value if it's an env variable", () => {
+    it("should return the value if it's an env variable", () => {
       process.env["TEST_VALUE"] = "test";
 
-      expect(readConfigValue("env/TEST_VALUE")).toEqual("test");
+      expect(readConfigValue("env/TEST_VALUE")).toBe("test");
     });
   });
 });
