@@ -17485,7 +17485,7 @@ async function run() {
         }
         const { defaults, secrets } = await (0,_config__WEBPACK_IMPORTED_MODULE_1__/* .loadConfig */ .M)(configFile);
         for await (const { name, value: value, repos, actions, dependabot } of secrets) {
-            if (secretFilters && secretFilters.some((0,_utils__WEBPACK_IMPORTED_MODULE_3__/* .ignoreCaseCompare */ .T)(name))) {
+            if (secretFilters && !secretFilters.some((0,_utils__WEBPACK_IMPORTED_MODULE_3__/* .ignoreCaseCompare */ .T)(name))) {
                 (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.debug)(`Skipping secret ${name}`);
                 continue;
             }
