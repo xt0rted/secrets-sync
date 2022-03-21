@@ -50,7 +50,7 @@
     "dotenv": "^16.0.0",
     "eslint": "^8.11.0",
     "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jest": "^26.1.1",
+    "eslint-plugin-jest": "^26.1.2",
     "eslint-plugin-unicorn": "^41.0.1",
     "jest": "^27.5.1",
     "jest-circus": "^27.4.6",
