@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- Bumped `@octokit/plugin-throttling` from 3.5.2 to 3.6.1
+- Bumped `@octokit/plugin-throttling` from 3.5.2 to 3.6.2
 
 ## [1.0.1](https://github.com/xt0rted/secrets-sync/compare/v1.0.0...v1.0.1) - 2022-02-18
 
