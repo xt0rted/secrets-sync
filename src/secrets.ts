@@ -31,7 +31,7 @@ export async function setOrDeleteSecret(environment: SecretEnvironment, owner: s
     owner,
     repo,
   });
-  const encryptedValue = encrypt(publicKey.key, value);
+  const encryptedValue = await encrypt(publicKey.key, value);
 
   await setSecret({
     environment,
