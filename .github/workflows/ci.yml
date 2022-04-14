@@ -35,7 +35,3 @@ jobs:
       - run: npm test
 
       - run: npm run package
-        if: ${{ matrix.node != 17 }}
-
-      - run: npm run package:17
-        if: ${{ matrix.node == 17 }}
