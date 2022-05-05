@@ -68,13 +68,13 @@ secrets:
     value: env/APP_ID
     repos:
       - test-user/test-repo-1
-      - test-user-test-repo-2
+      - test-user/test-repo-2
 
   - name: PRIVATE_KEY
     value: env/PRIVATE_KEY
     repos:
       - test-user/test-repo-1
-      - test-user-test-repo-2
+      - test-user/test-repo-2
 ```
 
 ## Options
@@ -130,7 +130,7 @@ These are opt-in so if you don't set them here you'll need to set them on each i
   dependabot: true # Optional
   repos: # List of repositories the secret should be added to
     - test-user/test-repo-1
-    - test-user-test-repo-2
+    - test-user/test-repo-2
 ```
 
 The value of a secret can be static or dynamic.
