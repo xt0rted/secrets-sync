@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Bumped `@actions/core` from 1.6.0 to 1.8.2
 - Bumped `@actions/github` from 5.0.0 to 5.0.1
 - Bumped `@octokit/plugin-throttling` from 3.5.2 to 3.6.2
 
