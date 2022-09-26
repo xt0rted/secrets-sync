@@ -1,10 +1,12 @@
-import tweetsodium from "tweetsodium"; // eslint-disable-line import/default
+import libsodium from "libsodium-wrappers";
 
-export function encrypt(publicKey: string, message: string) {
+export async function encrypt(publicKey: string, message: string): Promise<string> {
   const messageBytes = Buffer.from(message);
   const keyBytes = Buffer.from(publicKey, "base64");
+  
+  await libsodium.ready;
 
-  const encryptedBytes = tweetsodium.seal(messageBytes, keyBytes);
+  const encryptedBytes = libsodium.crypto_box_seal(messageBytes, keyBytes);
 
   const encrypted = Buffer.from(encryptedBytes).toString("base64");
 
