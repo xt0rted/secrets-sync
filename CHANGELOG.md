@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- Bumped `@actions/core` from 1.6.0 to 1.9.1
+- Bumped `@actions/core` from 1.6.0 to 1.10.0
 - Bumped `@actions/github` from 5.0.0 to 5.1.0
 - Bumped `@github/memoize` from 1.0.2 to 1.1.1
 - Bumped `@octokit/plugin-throttling` from 3.5.2 to 4.3.0
