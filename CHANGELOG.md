@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## [1.1.0](https://github.com/xt0rted/secrets-sync/compare/v1.0.1...v1.1.0) - 2022-10-23
+
 - Bumped `@actions/core` from 1.6.0 to 1.10.0
 - Bumped `@actions/github` from 5.0.0 to 5.1.1
 - Bumped `@github/memoize` from 1.0.2 to 1.1.1
