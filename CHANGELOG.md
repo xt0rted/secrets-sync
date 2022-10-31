@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Bumped `@octokit/plugin-retry` from 3.0.9 to 4.0.3
+
 ## [1.1.0](https://github.com/xt0rted/secrets-sync/compare/v1.0.1...v1.1.0) - 2022-10-23
 
 - Bumped `@actions/core` from 1.6.0 to 1.10.0
