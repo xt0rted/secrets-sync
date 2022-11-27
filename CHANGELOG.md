@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Bumped `@octokit/plugin-retry` from 3.0.9 to 4.0.3
+- Bumped `@octokit/plugin-throttling` from 4.3.1 to 4.3.2
 
 ## [1.1.0](https://github.com/xt0rted/secrets-sync/compare/v1.0.1...v1.1.0) - 2022-10-23
 
