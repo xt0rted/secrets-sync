@@ -38,7 +38,8 @@
     "tweetsodium": "^0.0.5"
   },
   "devDependencies": {
-    "@types/eslint": "^8.21.0",
+    "@types/eslint": "^8.21.1",
+    "@types/estree": "^1.0.0",
     "@types/jest": "^28.1.7",
     "@types/js-yaml": "^4.0.5",
     "@types/node": "^18.14.0",
