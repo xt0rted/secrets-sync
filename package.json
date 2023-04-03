@@ -38,7 +38,7 @@
     "tweetsodium": "^0.0.5"
   },
   "devDependencies": {
-    "@types/eslint": "^8.21.3",
+    "@types/eslint": "^8.37.0",
     "@types/estree": "^1.0.0",
     "@types/jest": "^28.1.7",
     "@types/js-yaml": "^4.0.5",
@@ -48,7 +48,7 @@
     "@vercel/ncc": "^0.36.1",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
-    "eslint": "^8.36.0",
+    "eslint": "^8.37.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^27.2.1",
     "eslint-plugin-unicorn": "^46.0.0",
