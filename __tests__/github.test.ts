@@ -6,7 +6,7 @@ import type { DeleteSecretOptions } from "../src/github";
 
 jest.unstable_mockModule("@actions/core", () => ({
   __esModule: true,
-  ...(jest.requireActual("@actions/core") as object),
+  ...jest.requireActual("@actions/core"),
   warning: jest.fn(),
 }));
 
