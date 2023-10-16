@@ -38,13 +38,13 @@
     "tweetsodium": "^0.0.5"
   },
   "devDependencies": {
-    "@types/eslint": "^8.44.3",
+    "@types/eslint": "^8.44.4",
     "@types/estree": "^1.0.2",
     "@types/jest": "^28.1.7",
     "@types/js-yaml": "^4.0.6",
     "@types/node": "^20.4.5",
-    "@typescript-eslint/eslint-plugin": "^6.7.4",
-    "@typescript-eslint/parser": "^6.7.4",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
     "@vercel/ncc": "^0.36.1",
     "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
