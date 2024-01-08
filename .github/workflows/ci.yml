@@ -19,7 +19,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [16, 18]
+        node:
+          - 16
+          - 18
 
     steps:
       - name: Check out repo

@@ -29,11 +29,11 @@
   "author": "xt0rted",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.10.0",
-    "@actions/github": "^5.1.1",
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
     "@github/memoize": "^1.1.4",
-    "@octokit/plugin-retry": "^4.1.1",
-    "@octokit/plugin-throttling": "^5.0.1",
+    "@octokit/plugin-retry": "^6.0.1",
+    "@octokit/plugin-throttling": "^8.1.3",
     "js-yaml": "^4.1.0",
     "tweetsodium": "^0.0.5"
   },
