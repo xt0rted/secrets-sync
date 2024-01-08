@@ -28,7 +28,7 @@ const github = new octokit(
     {
       throttle: {
         onRateLimit: () => true,
-        onAbuseLimit: () => true,
+        onSecondaryRateLimit: () => true,
       },
     },
   ),
