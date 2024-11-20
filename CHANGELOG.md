@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- Bumped `@github/memoize` from 1.1.1 to 1.1.4
+- Bumped `@github/memoize` from 1.1.1 to 1.1.5
 - Bumped `@octokit/plugin-retry` from 3.0.9 to 4.1.1
 - Bumped `@octokit/plugin-throttling` from 4.3.1 to 5.0.1
 
